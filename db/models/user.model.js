@@ -62,6 +62,34 @@ const userSchema = new mongoose.Schema({
         default: false,
     },
     changePasswordAt: Date,
+    
+    medicalInfo: {
+    bloodType: {
+        type: String,
+        enum: ["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-", null],
+        default: null,
+    },
+    allergies: {
+        type: [String],
+        default: [],
+    },
+    chronicDiseases: {
+        type: [String],
+        default: [],
+    },
+    currentMedications: {
+        type: [String],
+        default: [],
+    },
+    height: {
+        type: Number, // in cm
+        default: null,
+    },
+    weight: {
+        type: Number, // in kg
+        default: null,
+    },
+},
 
 },
     { timestamps: true, versionKey: false })
